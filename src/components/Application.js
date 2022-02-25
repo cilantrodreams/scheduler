@@ -59,9 +59,12 @@ export default function Application(props) {
     return <Appointment key={appointment.id} {...appointment} />});
 
   useEffect(() => {
-    axios.get("/api/days").then(response => {
-      console.log(response.data);
-      setDays(response.data);
+    Promise.all([
+      axios.get("/api/days"),
+      axios.get("/api/appointments"),
+      axios.get("/api/interviewers")
+    ]).then((all) => {
+      console.log(all);
     });
   }, []);
 
