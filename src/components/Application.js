@@ -18,7 +18,9 @@ export default function Application(props) {
   const setDay = day => setState({...state, day});
 
   const appointmentsArray = dailyAppointments.map((appointment) => {
-    return <Appointment key={appointment.id} {...appointment} />});
+    const interview = getInterview(state, dailyAppointments.interview)
+
+    return <Appointment key={appointment.id} {...appointment} interview={interview} />});
 
   useEffect(() => {
     Promise.all([
