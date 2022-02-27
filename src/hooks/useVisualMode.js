@@ -7,5 +7,9 @@ export default function useVisualMode(initial) {
     setMode(newMode);
   }
 
-  return { mode, transition };
+  const back = function() {
+
+  }
+
+  return { mode, transition, back };
 }
