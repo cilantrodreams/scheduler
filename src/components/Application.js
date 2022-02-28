@@ -20,7 +20,12 @@ export default function Application(props) {
   const appointmentsArray = dailyAppointments.map((appointment) => {
     const interview = getInterview(state, dailyAppointments.interview)
 
-    return <Appointment key={appointment.id} {...appointment} interview={interview} />});
+    return <Appointment key={appointment.id} {...appointment} interview={interview} bookInterview={bookInterview}/>
+  });
+
+  function bookInterview(id, interview) {
+    console.log(id, interview);
+  }
 
   useEffect(() => {
     Promise.all([
