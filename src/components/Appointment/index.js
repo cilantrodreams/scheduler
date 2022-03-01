@@ -56,7 +56,12 @@ export default function Appointment(props) {
         />
       )}
       {mode === SAVING && <Status />}
-      {mode === CONFIRM && <Confirm />}
+      {mode === CONFIRM && (
+        <Confirm
+          onCancel={back}
+          onConfirm={remove}
+        />
+      )}
     </article>
   );
 };
