@@ -30,6 +30,10 @@ export default function Appointment(props) {
     transition(SAVING);
   }
 
+  function remove() {
+    props.cancelInterview(props.id);
+  }
+
   return (
     <article className="appointment">
       <Header time={props.time}/>
