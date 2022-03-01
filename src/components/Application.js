@@ -46,6 +46,10 @@ export default function Application(props) {
       });
   }
 
+  function cancelInterview(id) {
+    console.log(id);
+  }
+
   useEffect(() => {
     Promise.all([
       axios.get("/api/days"),
