@@ -47,5 +47,8 @@ export default function useApplicationData(initial) {
       });
   }
 
-  return { state, setDay, bookInterview, cancelInterview}
+  function spotsRemaining(id) {
+
+  }
+  return { state, setDay, bookInterview, cancelInterview, spotsRemaining}
 }
