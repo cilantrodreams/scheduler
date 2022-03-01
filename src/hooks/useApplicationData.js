@@ -47,8 +47,16 @@ export default function useApplicationData(initial) {
       });
   }
 
-  function spotsRemaining(id) {
+  function countSpots(state, day) {
+    const currentDay = state.days.find(dayItem => dayItem.name === day);
 
+    const appointmentIds = currentDay.appointments;
+
+    const emptySpots = appointmentIds.filter(id => {
+      return state.appointments[id].interview === null;
+    });
+
+    return emptySpots.length;
   }
-  return { state, setDay, bookInterview, cancelInterview, spotsRemaining}
+  return { state, setDay, bookInterview, cancelInterview, countSpots}
 }
