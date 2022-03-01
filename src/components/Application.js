@@ -26,7 +26,9 @@ export default function Application(props) {
         {...appointment}
         interview={interview}
         interviewers={interviewers}
-        bookInterview={bookInterview}/>
+        bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
+      />
     );
   }); 
 
