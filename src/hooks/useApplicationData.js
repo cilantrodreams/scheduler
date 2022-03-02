@@ -49,24 +49,6 @@ export default function useApplicationData(initial) {
       });
   }
 
-  // function countSpots(state, day) {
-  //   const currentDay = state.days.find(dayItem => dayItem.name === day);
-
-  //   const appointmentIds = currentDay.appointments;
-
-  //   const emptySpots = appointmentIds.filter(id => {
-  //     return state.appointments[id].interview === null;
-  //   });
-
-  //   currentDay.spots = emptySpots.length;
-    
-  //   const days = [...state.days];
-  //   const dayIndex = days.findIndex(day => day.name === state.day);
-  //   days[dayIndex] = currentDay;
-    
-  //   return days;
-  // }
-
   function updateSpots(state, appointments) {
     const currentDay = state.days.find(d => d.name === state.day);
 
