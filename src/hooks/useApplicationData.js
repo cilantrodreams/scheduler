@@ -28,7 +28,8 @@ export default function useApplicationData(initial) {
 
     return axios.put(`/api/appointments/${id}`, {interview})
       .then(() => {
-        setState({...state, appointments});
+        const days = countSpots(state, state.day);
+        setState({...state, days, appointments});
       });
   }
 
@@ -43,7 +44,8 @@ export default function useApplicationData(initial) {
     }
     return axios.delete(`/api/appointments/${id}`)
       .then(() => {
-        setState({...state, appointments});
+        const days = countSpots(state, state.day);
+        setState({...state, days, appointments});
       });
   }
 
@@ -56,7 +58,14 @@ export default function useApplicationData(initial) {
       return state.appointments[id].interview === null;
     });
 
-    return emptySpots.length;
+    currentDay.spots = emptySpots.length;
+    
+    const days = [...state.days];
+    const dayIndex = days.findIndex(day => day.name === state.day);
+    days[dayIndex] = currentDay;
+    
+    return days;
   }
-  return { state, setDay, bookInterview, cancelInterview, countSpots}
+
+  return { state, setDay, bookInterview, cancelInterview}
 }
