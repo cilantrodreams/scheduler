@@ -12,6 +12,7 @@ import Error from "./Error";
 
 import useVisualMode from "hooks/useVisualMode";
 
+// mode constants
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
 const CREATE = "CREATE";
@@ -27,7 +28,7 @@ export default function Appointment(props) {
     props.interview ? SHOW : EMPTY
   );
 
-  // creates interview object
+  // creates interview object and saves it to database
   function save(name, interviewer) {
     const interview = {
       student: name,
@@ -42,6 +43,7 @@ export default function Appointment(props) {
     transition(SAVING);
   }
 
+  // removes interview object from database
   function remove() {
     props
       .cancelInterview(props.id)

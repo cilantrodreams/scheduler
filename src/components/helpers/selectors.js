@@ -1,3 +1,5 @@
+// selector to get given day's appointment objects
+// returns them as an array
 export function getAppointmentsForDay(state, day) {
   let appointments = [];
 
@@ -14,6 +16,8 @@ export function getAppointmentsForDay(state, day) {
   return appointments;
 }
 
+// selector to get given day's interviewers
+// returns them as an array
 export function getInterviewersForDay(state, day) {
   let interviewers = [];
 
@@ -30,6 +34,8 @@ export function getInterviewersForDay(state, day) {
   return interviewers;
 }
 
+// selector to get given interview id's details
+// returns an interview object
 export function getInterview(state, interview) {
   let interviewDetails = null;
 
