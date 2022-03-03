@@ -6,8 +6,8 @@ This application was developed as a project assignment for Lighthouse Labs Web D
 
 ## Screenshots
 
-[Scheduler Form](https://github.com/cilantrodreams/scheduler/blob/master/docs/scheduler-form.png)
-[Scheduler Delete](https://github.com/cilantrodreams/scheduler/blob/master/docs/scheduler-delete.png)
+![Scheduler Form](https://github.com/cilantrodreams/scheduler/blob/master/docs/scheduler-form.png)
+![Scheduler Delete](https://github.com/cilantrodreams/scheduler/blob/master/docs/scheduler-delete.png)
 
 ## Setup
 
