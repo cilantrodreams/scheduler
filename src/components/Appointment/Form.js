@@ -17,10 +17,11 @@ export default function Form(props) {
     props.onCancel();
   };
 
-  const onSubmit = (event) => {
+  function onSubmit(event) {
     event.preventDefault();
-  };
+  }
 
+  // validate student and interviewer state before calling onSave
   function validate() {
     if (student === "" || interviewer === null) {
       setError("Student name or interviewer cannot be blank");
